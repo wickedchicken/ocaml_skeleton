@@ -11,7 +11,7 @@ nice to provide a jumpstart environment for someone to get code up-and-running.
 An example application with unit tests seems to be a nice sandbox for language
 discovery.
 
-*Caveat Emptor* The system I've provided here works for me but I am still
+*Caveat Emptor*: The system I've provided here works for me but I am still
 inexperienced with the language -- especially with respect to the module system
 and how ocamlbuild discovers dependencies. If you are more familiar with OCaml
 and have input on how larger, more established build systems operate than I
