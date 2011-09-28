@@ -50,7 +50,7 @@ In short:
   > bin/main.native
 
   > make tests
-``
+```
 
 The source for the application is in src/main.ml and any subdirectories. If you
 add subdirectories, make sure you add an 'include' tag in the `_tags` file in
