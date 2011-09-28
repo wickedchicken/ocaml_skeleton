@@ -52,16 +52,16 @@ In short:
   > make tests
 ```
 
-The source for the application is in src/main.ml and any subdirectories. If you
+The source for the application is in `src/main.ml` and any subdirectories. If you
 add subdirectories, make sure you add an 'include' tag in the `_tags` file in
 the top directory (see the tag for `src/calc`). Tags are one per line and
 multiple lines are allowed for a target. More documentation on `_tags` can be
 found at the [ocamlbuild user
-manual]:http://nicolaspouillard.fr/ocamlbuild/ocamlbuild-user-guide.html#htoc15
+manual](http://nicolaspouillard.fr/ocamlbuild/ocamlbuild-user-guide.html#htoc15)
 
 The `myocamlbuild.ml` plugin contains code to look up and link OCaml packages
 registered with `ocamlfind`. Let's say you want to use the
-[PCRE]:http://www.pcre.org/ package installed with `sudo aptitude install
+[PCRE](http://www.pcre.org/) package installed with `sudo aptitude install
 libpcre-ocaml-dev`. You add `open Pcre;;` in `src/calc/calc.ml`, then add the
 following line to `tags`:
 ```
@@ -76,18 +76,19 @@ add a package to `main.ml` or `tests.ml`.
 
 Tests are written in `tests/tests.ml`. Make sure OUnit is opened, open up your
 module, and write some tests using the
-[OUnit]:http://ounit.forge.ocamlcore.org/api framework. For a reference, here is
-a list of [available testing
-methods]:http://ounit.forge.ocamlcore.org/api/OUnit.html. Note that you must add
-your tests to the `suite` for them to run. I tried adding in the code found at
-[Skydeck]:http://skydeck.com/blog/programming/unit-test-in-ocaml-with-ounit but
-I couldn't make it work nicely with separate testing modules. However, having
-the tests hand-added gives you the full flexibility of OUnit.
+[OUnit](http://ounit.forge.ocamlcore.org/api) framework. For a reference, here
+is a list of [available testing
+methods](http://ounit.forge.ocamlcore.org/api/OUnit.html).  Note that you must
+add your tests to the `suite` for them to run. I tried adding in the code found
+at [Skydeck](http://skydeck.com/blog/programming/unit-test-in-ocaml-with-ounit)
+but I couldn't make it work nicely with separate testing modules. However,
+having the tests hand-added gives you the full flexibility of OUnit.
 
 todo
 ====
 
 see the GitHub issues page, but:
+
 * instructions for OSX/BSD/other distros
 * make tests nicer (separate test files?)
 * add optimized builds
@@ -98,10 +99,11 @@ bugs
 ====
 
 see the GitHub issues page, but:
+
 * _tags file, specifically the `pkg_` integration, doesn't apply to 'top level
   targets,' these being `main.ml` and `tests.ml`. If you want to add packages to
   these, you can currently give them to `ocamlbuild` directly on the commandline
-  via `-tag`, see the Makefile for how `pkg_oUnit` is passes to `tests.byte`.
+  via `-tag`, see the `Makefile` for how `pkg_oUnit` is passes to `tests.byte`.
 
 resources
 =========
@@ -110,10 +112,7 @@ resources
 * Sample OCaml code (cross-referenced with other languages):
   http://pleac.sourceforge.net/pleac_ocaml/
 * The default vim plugin for .ml files has an annoying textwidth setting. Try
-  this to turn that off:
-  ```bash
-  > echo "set tw=0" >> ~/.vim/after/indent/ocaml.vim
-  ```
+  this to turn that off: `echo "set tw=0" >> ~/.vim/after/indent/ocaml.vim`
 
 thanks
 ======
