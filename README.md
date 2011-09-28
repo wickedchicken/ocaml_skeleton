@@ -63,7 +63,7 @@ The `myocamlbuild.ml` plugin contains code to look up and link OCaml packages
 registered with `ocamlfind`. Let's say you want to use the
 [PCRE](http://www.pcre.org/) package installed with `sudo aptitude install
 libpcre-ocaml-dev`. You add `open Pcre;;` in `src/calc/calc.ml`, then add the
-following line to `tags`:
+following line to `_tags`:
 ```
 "src/calc/calc.ml": pkg_pcre
 ```
