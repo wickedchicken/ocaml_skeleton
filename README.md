@@ -1,6 +1,10 @@
 ocaml skeleton
 ==============
 
+`ocaml_skeleton` is a scaffolding framework to get up and running build OCaml
+applications quickly. It provides a filesystem structure, Makefile, and example
+unit tests.
+
 OCaml is relatively difficult to navigate as a new user. While the language has
 ample online documentation, the development environment itself can be remarkably
 opaque. The problem is compounded by numerous sites providing half-working
@@ -41,7 +45,7 @@ usage
 The `Makefile` contains 5 targets: `main-native`, `main`, `tests-native`, `tests`, and
 `clean`. `-native` are natively compiled (but not necessarily optimized)
 versions of the binaries while the others are byte-code versions. Binaries are
-copied into bin/ after being build with `ocamlbuild`.
+copied into bin/ after being built with `ocamlbuild`.
 
 In short:
 
@@ -74,8 +78,8 @@ or `pkg_num`.
 *Note*: there is a bug related to this, look in the bugs section if you want to
 add a package to `main.ml` or `tests.ml`.
 
-Tests are written in `tests/tests.ml`. Make sure OUnit is opened, open up your
-module, and write some tests using the
+Tests are written in `tests/tests.ml`. Make sure the `OUnit` package is opened,
+open up your module, and write some tests using the
 [OUnit](http://ounit.forge.ocamlcore.org/api) framework. For a reference, here
 is a list of [available testing
 methods](http://ounit.forge.ocamlcore.org/api/OUnit.html).  Note that you must
