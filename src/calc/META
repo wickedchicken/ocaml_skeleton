@@ -1,0 +1,9 @@
+# OASIS_START
+# DO NOT EDIT (digest: 00381b781ac1ea10224c2d0559e8cb56)
+version = "0.2"
+description = "A basic OCaml project with unit tests"
+archive(byte) = "calc.cma"
+archive(native) = "calc.cmxa"
+exists_if = "calc.cma"
+# OASIS_STOP
+

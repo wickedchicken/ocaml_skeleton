@@ -1,0 +1,39 @@
+OASISFormat: 0.2
+Name:        ocaml_skeleton
+Version:     0.2
+Synopsis:    A basic OCaml project with unit tests
+Authors:     Mike Stipicevic
+License:     BSD3
+Plugins:     META (0.2), StdFiles (0.2), DevFiles (0.2)
+
+
+Flag tests
+  Description: Run tests
+  Default: true
+
+Library calc
+  Path:       src/calc
+  BuildTools: ocamlbuild
+  Modules:    Calc
+
+Executable main
+  Path:       src
+  BuildTools: ocamlbuild
+  MainIs:     main.ml
+  CompiledObject: best
+
+Executable test_calc
+  Path:       tests
+  BuildTools: ocamlbuild
+  BuildDepends: oUnit
+  MainIs:     tests.ml
+  CompiledObject: best
+
+Test test
+  Command: $test_calc
+  TestTools: test_calc
+  Run$: flag(tests)
+
+SourceRepository head
+  Type:     git
+  Location: git://github.com/wickedchicken/ocaml_skeleton.git

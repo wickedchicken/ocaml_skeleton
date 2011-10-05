@@ -1,28 +1,38 @@
-main-native:
-	ocamlbuild -I src/ main.native
-	@cp `readlink main.native` bin/main.native
-	@rm main.native
+# OASIS_START
+# DO NOT EDIT (digest: bc1e05bfc8b39b664f29dae8dbd3ebbb)
 
-main:
-	ocamlbuild -I src/ main.byte
-	@cp `readlink main.byte` bin/main.byte
-	@rm main.byte
+SETUP = ocaml setup.ml
 
-tests-native:
-	ocamlbuild -I src/ -tag pkg_oUnit tests.native
-	@cp `readlink tests.native` bin/tests.native
-	@rm tests.native
-	bin/tests.native
-	@echo
+build: setup.data
+	$(SETUP) -build $(BUILDFLAGS)
 
-tests:
-	ocamlbuild -I src/ -tag pkg_oUnit tests.byte
-	@cp `readlink tests.byte` bin/tests.byte
-	@rm tests.byte
-	bin/tests.byte
-	@echo
+doc: setup.data build
+	$(SETUP) -doc $(DOCFLAGS)
 
-clean:
-	-rm -rf _build/ bin/*
+test: setup.data build
+	$(SETUP) -test $(TESTFLAGS)
 
-.PHONY: main-native main tests-native tests clean
+all: 
+	$(SETUP) -all $(ALLFLAGS)
+
+install: setup.data
+	$(SETUP) -install $(INSTALLFLAGS)
+
+uninstall: setup.data
+	$(SETUP) -uninstall $(UNINSTALLFLAGS)
+
+reinstall: setup.data
+	$(SETUP) -reinstall $(REINSTALLFLAGS)
+
+clean: 
+	$(SETUP) -clean $(CLEANFLAGS)
+
+distclean: 
+	$(SETUP) -distclean $(DISTCLEANFLAGS)
+
+setup.data:
+	$(SETUP) -configure $(CONFIGUREFLAGS)
+
+.PHONY: build doc test all install uninstall reinstall clean distclean configure
+
+# OASIS_STOP

@@ -1,0 +1,5 @@
+(* OASIS_START *)
+(* DO NOT EDIT (digest: f67d3cc6d0c22bfcf9c4317299ace333) *)
+Authors of ocaml_skeleton
+Mike Stipicevic
+(* OASIS_STOP *)
