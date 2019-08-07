@@ -1,6 +1,14 @@
 ocaml skeleton
 ==============
 
+*** THIS REPOSITORY IS UNMAINTAINED ***
+
+You might want to check out https://ocaml.org/learn/tutorials/get_up_and_running.html
+or https://ocaml.org/learn/tutorials/setting_up_with_oasis.html for a more up-to-date
+introduction to OCaml.
+
+==============
+
 `ocaml_skeleton` is a scaffolding framework to get up and running build OCaml
 applications quickly. It provides a filesystem structure, Makefile, and example
 unit tests.
